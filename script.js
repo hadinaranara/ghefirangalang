@@ -156,10 +156,17 @@ function initCountdown() {
   const pad = n => String(n).padStart(2, "0");
   const tick = () => {
     let s = Math.max(0, Math.floor((target - Date.now()) / 1000));
-    $("#cd-d").textContent = pad(Math.floor(s / 86400));
-    $("#cd-h").textContent = pad(Math.floor(s % 86400 / 3600));
-    $("#cd-m").textContent = pad(Math.floor(s % 3600 / 60));
-    $("#cd-s").textContent = pad(s % 60);
+    const values = {
+      d: pad(Math.floor(s / 86400)),
+      h: pad(Math.floor(s % 86400 / 3600)),
+      m: pad(Math.floor(s % 3600 / 60)),
+      s: pad(s % 60)
+    };
+    for (const [unit, value] of Object.entries(values)) {
+      $(`#cd-${unit}`).textContent = value;
+      $(`#hero-cd-${unit}`).textContent = value;
+      $(`#cover-cd-${unit}`).textContent = value;
+    }
   };
   tick(); setInterval(tick, 1000);
   // Tombol kalender: unduh file .ics
@@ -201,11 +208,13 @@ function initMusicPlayer() {
 
 /* Salin nomor rekening */
 function initCopyButton() {
-  $("#copyBtn").addEventListener("click", async () => {
-    const num = $("#acc").textContent;
-    try { await navigator.clipboard.writeText(num); }
-    catch { const t = document.createElement("textarea"); t.value = num; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
-    toast("Account number copied");
+  $$(".copy-account").forEach(button => {
+    button.addEventListener("click", async () => {
+      const num = button.closest(".gift").querySelector("b").textContent;
+      try { await navigator.clipboard.writeText(num); }
+      catch { const t = document.createElement("textarea"); t.value = num; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
+      toast("Account number copied");
+    });
   });
 }
 

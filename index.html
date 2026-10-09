@@ -53,15 +53,23 @@
       <span class="op-bfw" style="left:62%;top:74%;width:7%;--d:1.2s"><img class="op-bf" src="assets/opening/bfly.webp" alt="" style="--r:-10deg"></span>
       <h2 class="op-names"><span>Ghefira &amp; Galang</span></h2>
     </div>
-    <div class="op-gate"><img src="assets/opening/gate.webp" alt="">
+    <div class="op-gate"><img src="assets/opening/wayang.png" alt="">
       <div class="op-door"><div class="op-glow"></div>
-        <div class="op-leaf l"><img src="assets/opening/gate.webp" alt=""></div><div class="op-leaf r"><img src="assets/opening/gate.webp" alt=""></div></div>
+        <div class="op-leaf l"><img src="assets/opening/wayang.png" alt=""></div><div class="op-leaf r"><img src="assets/opening/wayang.png" alt=""></div></div>
     </div>
   </div>
   <div class="cover-in">
     <p class="small">THE WEDDING OF</p>
     <h1 class="names">Ghefira <i>&amp;</i> Galang</h1>
-    <p class="date">21 • 11 • 2026</p>
+    <div class="cover-count" role="timer" aria-label="Countdown menuju hari pernikahan" aria-live="off">
+      <div><b id="cover-cd-d">00</b><span>HARI</span></div>
+      <i>:</i>
+      <div><b id="cover-cd-h">00</b><span>JAM</span></div>
+      <i>:</i>
+      <div><b id="cover-cd-m">00</b><span>MENIT</span></div>
+      <i>:</i>
+      <div><b id="cover-cd-s">00</b><span>DETIK</span></div>
+    </div>
     <button class="btn" id="openBtn" aria-label="Open invitation">OPEN INVITATION</button>
   </div>
   <p class="scroll-hint">SCROLL TO EXPLORE</p>
@@ -87,45 +95,60 @@
 <div class="invitation-content">
 <!-- 2. NAV -->
 <nav class="nav" aria-label="Navigasi utama">
-  <a href="#home" class="active">Home</a><a href="#couple">Couple</a><a href="#story">Story</a><a href="#event">Event</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a><a href="#wishes">Wishes</a>
+  <a href="#home" class="active">Home</a><a href="#couple">Bride</a><a href="#groom">Groom</a><a href="#story">Story</a><a href="#event">Event</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a><a href="#wishes">Wishes</a>
 </nav>
 
 <!-- 3. HERO -->
 <section id="home" class="hero">
   <p class="small reveal blur">WE ARE GETTING MARRIED</p>
   <h2 class="names big reveal blur">GHEFIRA <i>&amp;</i> GALANG</h2>
-  <p class="date reveal">21 NOVEMBER 2026</p>
+  <div class="hero-count reveal" role="timer" aria-label="Countdown menuju hari pernikahan" aria-live="off">
+    <div><b id="hero-cd-d">00</b><span>HARI</span></div>
+    <i>:</i>
+    <div><b id="hero-cd-h">00</b><span>JAM</span></div>
+    <i>:</i>
+    <div><b id="hero-cd-m">00</b><span>MENIT</span></div>
+    <i>:</i>
+    <div><b id="hero-cd-s">00</b><span>DETIK</span></div>
+  </div>
 </section>
 
 <!-- 4. QUOTE -->
 <section class="quote reveal zoom"><span class="orn">✿ ❦ ✿</span><blockquote>“Two souls, one heart, one beautiful journey.”</blockquote></section>
 
-<!-- 5. COUPLE -->
-<section id="couple" class="sec">
-  <h2 class="title reveal">THE COUPLE</h2>
-  <div class="couple">
-    <article class="person reveal left">
-      <div class="frame tilt"><img src="assets/images/gallery/bride.webp" alt="Foto mempelai wanita, Ghefira" loading="lazy"></div>
-      <h3>Ghefira Lutfi Aufiardiani</h3><p>Putri dari Trianingsih &amp; Warno Rudi Martono</p>
-      <a href="https://instagram.com/" aria-label="Instagram Ghefira" target="_blank" rel="noopener">Instagram</a>
-    </article>
-    <article class="person reveal right">
-      <div class="frame tilt"><img src="assets/images/gallery/groom.webp" alt="Foto mempelai pria, Galang" loading="lazy"></div>
-      <h3>Galang Kelana Muhammad Saputro</h3><p>Panggilan: Galang</p><p>Putra dari Bpk. Maryamto Eko Saputro &amp; Ibu Wastini</p>
-      <a href="https://instagram.com/" aria-label="Instagram Galang" target="_blank" rel="noopener">Instagram</a>
-    </article>
-  </div>
+<!-- 5. BRIDE -->
+<section id="couple" class="sec person-section">
+  <p class="person-kicker reveal">THE BRIDE</p>
+  <div class="frame tilt reveal zoom"><img src="assets/images/gallery/bride.webp" alt="Foto mempelai wanita, Ghefira" loading="lazy"></div>
+  <article class="person reveal">
+    <h2 class="title">Ghefira Lutfi Aufiardiani</h2>
+    <p>Putri dari Trianingsih &amp; Warno Rudi Martono</p>
+    <a href="https://instagram.com/" aria-label="Instagram Ghefira" target="_blank" rel="noopener">Instagram</a>
+  </article>
 </section>
 
-<!-- 6. STORY -->
+<!-- 6. GROOM -->
+<section id="groom" class="sec person-section">
+  <p class="person-kicker reveal">THE GROOM</p>
+  <div class="frame tilt reveal zoom"><img src="assets/images/gallery/groom.webp" alt="Foto mempelai pria, Galang" loading="lazy"></div>
+  <article class="person reveal">
+    <h2 class="title">Galang Kelana Muhammad Saputro</h2>
+    <p>Panggilan: Galang</p>
+    <p>Putra dari Bpk. Maryamto Eko Saputro &amp; Ibu Wastini</p>
+    <a href="https://instagram.com/" aria-label="Instagram Galang" target="_blank" rel="noopener">Instagram</a>
+  </article>
+</section>
+
+<!-- 7. STORY -->
 <section id="story" class="sec">
-  <h2 class="title reveal">OUR STORY</h2>
-  <div class="timeline"><div class="line"></div>
-    <div class="item reveal left"><img src="assets/images/gallery/gal3.webp" alt="Pertemuan pertama" loading="lazy"><h3>2021 — First Meet</h3><p>Dua orang asing bertemu di sebuah sore yang hangat.</p></div>
-    <div class="item reveal right"><img src="assets/images/gallery/gal4.webp" alt="Kencan pertama" loading="lazy"><h3>2022 — First Date</h3><p>Secangkir kopi berubah menjadi cerita panjang.</p></div>
-    <div class="item reveal left"><img src="assets/images/gallery/gal5.webp" alt="Lamaran" loading="lazy"><h3>2024 — Engagement</h3><p>Dua keluarga bersatu dalam doa.</p></div>
-    <div class="item reveal right"><h3>2026 — The Wedding</h3><p>Kami melangkah bersama, selamanya.</p></div>
-  </div>
+  <p class="story-kicker reveal">OUR JOURNEY</p>
+  <article class="story-card reveal">
+    <span class="story-ornament" aria-hidden="true">✿</span>
+    <h2 class="title">Ujian &amp; Bukti</h2>
+    <p>Perjalanan ini tidak hanya dipenuhi bahagia, tetapi juga air mata, ragu, dan waktu yang menguji keyakinan. Ada saat langkah terasa berat, namun cinta selalu menemukan jalan untuk menguatkan.</p>
+    <p>Kami bertahan bukan karena semuanya mudah, melainkan karena doa yang tak putus, hati yang tetap memilih, dan keyakinan bahwa setiap luka akan bermuara pada restu. Hingga akhirnya, dua keluarga dipersatukan dalam harap yang sama.</p>
+    <span class="story-ornament bottom" aria-hidden="true">✿</span>
+  </article>
 </section>
 
 <!-- 8. EVENT -->
@@ -146,14 +169,23 @@
 
 <!-- 9. GALLERY -->
 <section id="gallery" class="sec">
-  <h2 class="title reveal">GALLERY</h2>
+  <p class="gallery-kicker reveal">GHEFIRA &amp; GALANG</p>
+  <h2 class="title reveal">A COLLECTION OF MOMENTS</h2>
+  <p class="gallery-intro reveal">Cerita kecil, kenangan indah, dan perjalanan menuju hari istimewa kami.</p>
   <div class="masonry">
-    <img class="g reveal zoom" src="assets/images/gallery/gal1.webp" alt="Galeri 1 (portrait)" loading="lazy" tabindex="0">
-    <img class="g land reveal zoom" src="assets/images/gallery/gal2.webp" alt="Galeri 2 (landscape)" loading="lazy" tabindex="0">
-    <img class="g sq reveal zoom" src="assets/images/gallery/gal3.webp" alt="Galeri 3 (square)" loading="lazy" tabindex="0">
-    <img class="g land reveal zoom" src="assets/images/gallery/gal4.webp" alt="Galeri 4" loading="lazy" tabindex="0">
-    <img class="g reveal zoom" src="assets/images/gallery/gal5.webp" alt="Galeri 5" loading="lazy" tabindex="0">
-    <img class="g sq reveal zoom" src="assets/images/gallery/gal6.webp" alt="Galeri 6" loading="lazy" tabindex="0">
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal1.webp" alt="Foto galeri 1" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>01</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal2.webp" alt="Foto galeri 2" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>02</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal3.webp" alt="Foto galeri 3" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>03</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal4.webp" alt="Foto galeri 4" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>04</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal5.webp" alt="Foto galeri 5" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>05</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal6.webp" alt="Foto galeri 6" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>06</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal7.webp" alt="Foto galeri 7" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>07</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal8.webp" alt="Foto galeri 8" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>08</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal9.webp" alt="Foto galeri 9" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>09</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal10.webp" alt="Foto galeri 10" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>10</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/gal11.webp" alt="Foto galeri 11" loading="lazy" tabindex="0"><figcaption><span>OUR MOMENTS</span><b>11</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/bride.webp" alt="Foto Ghefira" loading="lazy" tabindex="0"><figcaption><span>THE BRIDE</span><b>12</b></figcaption></figure>
+    <figure class="gallery-card reveal"><img class="g zoom" src="assets/images/gallery/groom.webp" alt="Foto Galang" loading="lazy" tabindex="0"><figcaption><span>THE GROOM</span><b>13</b></figcaption></figure>
   </div>
 </section>
 
@@ -165,8 +197,12 @@
 <!-- 11. GIFT -->
 <section id="gift" class="sec">
   <h2 class="title reveal">WEDDING GIFT</h2>
-  <div class="card gift reveal zoom"><p>Bank BCA</p><b id="acc">1234567890</b><p>GHEFIRA &amp; GALANG</p>
-    <button class="btn" id="copyBtn" aria-label="Salin nomor rekening">COPY ACCOUNT NUMBER</button>
+  <div class="card gift reveal zoom">
+    <p>Bank BRI</p><b id="acc">0671013970845502</b><p>GALANG KELANA MUHAMMAD SAPUTRO</p>
+    <button class="btn copy-account" id="copyBtn" aria-label="Salin nomor rekening">COPY ACCOUNT NUMBER</button>
+  </div>
+  <div class="card gift reveal zoom"><p>Bank Mandiri</p><b>1020013954042</b><p>GHEFIRA LUTFI AUFIARDIANI</p>
+    <button class="btn copy-account" aria-label="Salin nomor rekening">COPY ACCOUNT NUMBER</button>
     <p class="addr">Alamat hadiah: Jl. Melati No. 12, Bogor 16110</p></div>
 </section>
 
