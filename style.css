@@ -199,7 +199,7 @@ main{position:relative;z-index:2}
 @media(prefers-reduced-motion:reduce){.scene,.flash,.skip{display:none}}
 
 /* ===== ASET GAMBAR: background utama + dekorasi parallax ===== */
-.env{background:#efe4cc url(assets/images/bg.webp) center/cover}
+.env{background:#efe4cc url(assets/opening/bg.webp) center/cover}
 .env::before{content:"";position:absolute;inset:0;background:rgba(246,239,224,.72)} /* pelunak agar teks terbaca */
 
 /* ===== OPENING v4: gunungan -> joglo -> zoom out -> bunga & kupu-kupu -> halaman utama ===== */
@@ -283,17 +283,17 @@ main[hidden]{display:none}
  background-size:cover;
  background-repeat:no-repeat;
 }
-#home{--section-photo:url("assets/images/gallery/gal1.jpg")}
-.quote{--section-photo:url("assets/images/gallery/gal2.jpg")}
-#couple{--section-photo:url("assets/images/gallery/gal3.jpg")}
-#story{--section-photo:url("assets/images/gallery/gal4.jpg")}
-#event{--section-photo:url("assets/images/gallery/gal5.jpg")}
-#gallery{--section-photo:url("assets/images/gallery/gal6.jpg")}
-.video{--section-photo:url("assets/images/gallery/gal7.jpg")}
-#gift{--section-photo:url("assets/images/gallery/gal8.jpg")}
-#rsvp{--section-photo:url("assets/images/gallery/gal9.jpg")}
-#wishes{--section-photo:url("assets/images/gallery/gal10.jpg")}
-.foot{--section-photo:url("assets/images/gallery/gal11.jpg")}
+#home{--section-photo:url("assets/images/gallery/gal1.webp")}
+.quote{--section-photo:url("assets/images/gallery/gal2.webp")}
+#couple{--section-photo:url("assets/images/gallery/gal3.webp")}
+#story{--section-photo:url("assets/images/gallery/gal4.webp")}
+#event{--section-photo:url("assets/images/gallery/gal5.webp")}
+#gallery{--section-photo:url("assets/images/gallery/gal6.webp")}
+.video{--section-photo:url("assets/images/gallery/gal7.webp")}
+#gift{--section-photo:url("assets/images/gallery/gal8.webp")}
+#rsvp{--section-photo:url("assets/images/gallery/gal9.webp")}
+#wishes{--section-photo:url("assets/images/gallery/gal10.webp")}
+.foot{--section-photo:url("assets/images/gallery/gal11.webp")}
 
 
 /* ===== OPENING v5 (aset baru): gerbang wayang -> wayang tunggal -> mengipas -> bunga & kupu-kupu ===== */

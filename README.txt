@@ -11,7 +11,7 @@ Struktur:
   supabase-setup.sql - skema tabel dan kebijakan keamanan Supabase
   assets/
     images/    - aset opening & background (gunungan, joglo, bunga, kupu-kupu, bg)
-                 + foto placeholder (hero, bride, groom, story-1..3, gallery-1..3 .jpg)
+                 + foto placeholder (hero, bride, groom, story-1..3, gallery-1..3 .webp)
     audio/     - taruh wedding.mp3
     video/     - taruh prewedding.mp4
 
