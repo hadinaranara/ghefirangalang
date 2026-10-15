@@ -16,6 +16,36 @@ function toast(msg) {
   clearTimeout(toast.id); toast.id = setTimeout(() => t.classList.remove("show"), 2200);
 }
 
+function initLoadingScreen() {
+  const loadingScreen = $("#loadingScreen");
+  const imageSources = [
+    "assets/opening/bg2.png",
+    ...$$(".cover img, .photo-slides img").map(img => img.getAttribute("src"))
+  ];
+  const uniqueSources = [...new Set(imageSources.filter(Boolean))];
+
+  Promise.all(uniqueSources.map(src => new Promise(resolve => {
+    const image = new Image();
+    image.onload = () => {
+      if (typeof image.decode !== "function") {
+        resolve();
+        return;
+      }
+      image.decode().catch(error => {
+        console.error(`Gagal menyiapkan gambar undangan: ${src}`, error);
+      }).finally(resolve);
+    };
+    image.onerror = () => {
+      console.error(`Gagal memuat gambar undangan: ${src}`);
+      resolve();
+    };
+    image.src = src;
+  }))).then(() => {
+    loadingScreen.classList.add("is-hidden");
+    loadingScreen.setAttribute("aria-hidden", "true");
+  });
+}
+
 /* Samakan lebar tulisan nama dengan lebar panggung (tetap pas walau font berbeda/ belum termuat) */
 function fitNames() {
   const h = $(".op-names"), s = h && h.firstElementChild; if (!s) return;
@@ -326,6 +356,7 @@ function initCursor() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initLoadingScreen();
   initCover(); initNavigation(); initParallax(); initParticles(); initCountdown();
   initGallery(); initLightbox(); initMusicPlayer(); initCopyButton(); initRSVP(); initCursor();
 });
