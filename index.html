@@ -17,6 +17,10 @@
 <div class="loading-screen" id="loadingScreen" role="status" aria-label="Memuat undangan">
   <div class="loading-initials">G <span>&amp;</span> G</div>
   <p>MEMUAT UNDANGAN</p>
+  <div class="loading-progress" role="progressbar" aria-label="Progres pemuatan gambar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="loading-progress-fill"></span>
+  </div>
+  <span class="loading-progress-text" id="loadingProgress">0%</span>
 </div>
 
 <!-- 3D ENVIRONMENT: tiap layer punya data-depth (kecepatan gerak) -->
@@ -163,11 +167,11 @@
     <div><b id="cd-d">00</b><span>DAYS</span></div><div><b id="cd-h">00</b><span>HOURS</span></div><div><b id="cd-m">00</b><span>MINUTES</span></div><div><b id="cd-s">00</b><span>SECONDS</span></div>
   </div>
   <div class="cards">
-    <article class="card reveal left"><h3>AKAD NIKAH</h3><p>21 November 2026<br>08:00 WIB</p><p>Gedung Pernikahan<br>Bogor, Indonesia</p></article>
-    <article class="card reveal right"><h3>RESEPSI</h3><p>21 November 2026<br>11:00 WIB</p><p>Gedung Pernikahan<br>Bogor, Indonesia</p></article>
+    <article class="card reveal left"><h3>AKAD NIKAH</h3><p>21 November 2026<br>08:00 WIB</p><p>Perumahan Indogren<br>Jalan Kenanga Raya, Block GA No. 06</p></article>
+    <article class="card reveal right"><h3>RESEPSI</h3><p>21 November 2026<br>11:00 WIB</p><p>Perumahan Indogren<br>Jalan Kenanga Raya, Block GA No. 06</p></article>
   </div>
   <div class="row reveal">
-    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gedung+Pernikahan+Bogor" aria-label="Buka Google Maps">GOOGLE MAPS</a>
+    <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/efzMcN6Fhi3Kb1LN8" aria-label="Buka lokasi di Google Maps">GOOGLE MAPS</a>
     <button class="btn ghost" id="calBtn" aria-label="Tambah ke kalender">ADD TO CALENDAR</button>
   </div>
 </section>
@@ -209,6 +213,8 @@
   <div class="card gift reveal zoom"><p>Bank Mandiri</p><b>1020013954042</b><p>GHEFIRA LUTFI AUFIARDIANI</p>
     <button class="btn copy-account" aria-label="Salin nomor rekening">COPY ACCOUNT NUMBER</button>
     <p class="addr">Alamat hadiah: Jl. Melati No. 12, Bogor 16110</p></div>
+  <div class="card gift reveal zoom"><p>Bank BCA</p><b>5720819866</b><p>TRIANINGSIH</p>
+    <button class="btn copy-account" aria-label="Salin nomor rekening">COPY ACCOUNT NUMBER</button></div>
 </section>
 
 <!-- 12. RSVP -->

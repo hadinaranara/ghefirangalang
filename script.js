@@ -2,7 +2,7 @@
 const CONFIG = {
   weddingDate: "2026-11-21T08:00:00+07:00", // waktu akad (WIB)
   eventTitle: "Pernikahan Ghefira & Galang",
-  location: "Gedung Pernikahan, Bogor"
+  location: "Perumahan Indogren, Jalan Kenanga Raya, Block GA No. 06"
 };
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -18,26 +18,42 @@ function toast(msg) {
 
 function initLoadingScreen() {
   const loadingScreen = $("#loadingScreen");
+  const progressBar = $(".loading-progress", loadingScreen);
+  const progressFill = $(".loading-progress-fill", loadingScreen);
+  const progressText = $("#loadingProgress", loadingScreen);
   const imageSources = [
     "assets/opening/bg2.png",
     ...$$(".cover img, .photo-slides img").map(img => img.getAttribute("src"))
   ];
   const uniqueSources = [...new Set(imageSources.filter(Boolean))];
+  let completedImages = 0;
+
+  function updateProgress() {
+    const percentage = Math.round((completedImages / uniqueSources.length) * 100);
+    progressBar.setAttribute("aria-valuenow", String(percentage));
+    progressFill.style.width = `${percentage}%`;
+    progressText.textContent = `${percentage}%`;
+  }
 
   Promise.all(uniqueSources.map(src => new Promise(resolve => {
     const image = new Image();
+    const finish = () => {
+      completedImages++;
+      updateProgress();
+      resolve();
+    };
     image.onload = () => {
       if (typeof image.decode !== "function") {
-        resolve();
+        finish();
         return;
       }
       image.decode().catch(error => {
         console.error(`Gagal menyiapkan gambar undangan: ${src}`, error);
-      }).finally(resolve);
+      }).finally(finish);
     };
     image.onerror = () => {
       console.error(`Gagal memuat gambar undangan: ${src}`);
-      resolve();
+      finish();
     };
     image.src = src;
   }))).then(() => {
@@ -88,7 +104,7 @@ function initButterflies() {
   const src = ($(".op-bf") || {}).src;
   if (reduced || !src || $(".bfm")) return;
   const SPEED = [28, 55];            // kecepatan jelajah (px per detik) — makin kecil makin lambat
-  const COUNT = innerWidth < 600 ? 4 : 6;
+  const COUNT = 8;
   const layer = document.createElement("div"); layer.className = "bfm"; layer.setAttribute("aria-hidden", "true"); document.body.append(layer);
   const rnd = (a, c) => a + Math.random() * (c - a), clamp = (v, a, c) => Math.max(a, Math.min(c, v));
   const pick = b => { b.tx = rnd(30, innerWidth - 30); b.ty = rnd(40, innerHeight - 40); };

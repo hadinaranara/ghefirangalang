@@ -1,8 +1,8 @@
 /* ===== WARNA — ubah di sini ===== */
 :root{--ivory:#f6efe0;--cream:#efe4cc;--gold:#b8955a;--brown:#3b2a1e;--green:#5f7352;--ff-serif:"Cormorant Garamond",Georgia,serif;--ff-sans:"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:var(--ff-sans);color:var(--brown);background:var(--ivory);line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:clip}
+body{font-family:var(--ff-sans);color:var(--brown);background:var(--ivory);line-height:1.6;overflow-x:clip}
 body.locked{overflow:hidden}
 img{max-width:100%;display:block}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
@@ -328,7 +328,7 @@ main[hidden]{display:none}
 
 
 /* ===== OPENING v5 (aset baru): gerbang wayang -> wayang tunggal -> mengipas -> bunga & kupu-kupu ===== */
-#cover,#cover.opening{background:url(assets/opening/bg2.png) center/cover,#c4b2b2;backdrop-filter:none}
+#cover,#cover.opening{background:url(assets/opening/bg.webp) center/cover,#c4b2b2;backdrop-filter:none}
 #cover .small{color:#8a5a5a}
 #cover .names{font-family:"Mrs Saint Delafield","Great Vibes",cursive;font-weight:400;letter-spacing:0;font-size:clamp(2.2rem,10.5vw,3.8rem);white-space:nowrap;color:#6d2b2b;line-height:1.05}
 #cover .names i{color:#6d2b2b}
@@ -337,7 +337,7 @@ main[hidden]{display:none}
 #cover .btn:hover{background:#8a3b3b}
 .op-scene{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
 /* Gerbang wayang: zoom berpusat pada pintu ganda di bagian bawah gambar. */
-.op-gate{position:absolute;left:50%;top:2vh;height:66vh;aspect-ratio:1860/2622;translate:-50% 0;transform-origin:53.2% 82%;
+.op-gate{position:absolute;left:50%;top:2vh;width:min(46.82vh,100vw);aspect-ratio:1860/2622;translate:-50% 0;transform-origin:53.2% 82%;
  transition:scale 3.6s cubic-bezier(.55,0,.8,.45),translate 3.6s cubic-bezier(.55,0,.8,.45),opacity .9s ease 3s}
 .op-gate>img{display:block;width:100%;height:100%}
 #cover.zoom .op-gate{scale:20;translate:-50% -5.3vh;opacity:0}
@@ -378,3 +378,6 @@ main[hidden]{display:none}
 .loading-initials{font-family:var(--ff-serif);font-size:clamp(3.5rem,18vw,7rem);line-height:1;font-weight:500;letter-spacing:.04em}
 .loading-initials span{color:#d7b875;font-style:italic}
 .loading-screen p{font-size:.65rem;letter-spacing:.3em;color:#ead9b7}
+.loading-progress{width:min(68vw,18rem);height:3px;overflow:hidden;background:rgba(246,239,224,.28)}
+.loading-progress-fill{display:block;width:0;height:100%;background:#d7b875;transition:width .25s ease}
+.loading-progress-text{font-size:.7rem;font-variant-numeric:tabular-nums;letter-spacing:.12em;color:#ead9b7}
