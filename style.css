@@ -261,10 +261,19 @@ main{position:relative;z-index:2}
 @keyframes flap{to{scale:.55 1}}
 @media(prefers-reduced-motion:reduce){.cover{display:none}}
 
-/* ===== KUPU-KUPU DI HALAMAN UTAMA (terbang acak, tidak mengganggu klik) ===== */
+/* ===== KUPU-KUPU DI HALAMAN UTAMA (terbang dan bisa ditekan) ===== */
 .bfm{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
 .bfm .bw{position:absolute;left:0;top:0;opacity:0;transition:opacity 1.5s;will-change:transform}
-.bfm img{display:block;width:100%;transform-origin:55% 65%}
+.bfm .bw{pointer-events:auto;cursor:pointer;touch-action:manipulation}
+.bfm .bw.is-bursting{opacity:0!important;transition:opacity .08s}
+.bfm img{display:block;width:100%;transform-origin:55% 65%;pointer-events:none}
+.bfm .bw-petal{position:absolute;width:10px;height:18px;margin:-9px 0 0 -5px;border-radius:100% 0 100% 0;background:var(--petal-color);box-shadow:0 0 8px rgba(229,189,112,.4);
+ transform:rotate(var(--petal-angle)) translateY(-5px) scale(.15);opacity:0;will-change:transform,opacity;animation:flowerBloom .8s ease-out forwards}
+.bfm .bw-flower-center{position:absolute;width:7px;height:7px;margin:-3.5px;border-radius:50%;background:#f6d77a;box-shadow:0 0 10px 3px rgba(246,215,122,.7);
+ animation:flowerCenter .75s ease-out forwards}
+@keyframes flowerBloom{20%{opacity:1;transform:rotate(var(--petal-angle)) translateY(-8px) scale(1)}55%{opacity:1;transform:rotate(var(--petal-angle)) translateY(-15px) scale(1)}
+ to{opacity:0;transform:rotate(var(--petal-angle)) translateY(calc(0px - var(--petal-distance))) scale(.35)}}
+@keyframes flowerCenter{to{opacity:0;transform:scale(.2)}}
 
 /* ===== GERBANG GUNUNGAN TERBUKA saat kamera masuk ===== */
 .gunungan{position:absolute;left:50%;top:2vh;height:66vh;aspect-ratio:578/900;translate:-50% 0;transform-origin:50% 82.2%; /* titik zoom = tengah pintu */

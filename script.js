@@ -111,6 +111,36 @@ function initButterflies() {
   const bs = Array.from({ length: COUNT }, () => {
     const wrap = document.createElement("div"), img = document.createElement("img");
     wrap.className = "bw"; wrap.style.width = rnd(26, 48) + "px"; img.src = src; img.alt = ""; wrap.append(img); layer.append(wrap);
+    wrap.addEventListener("click", () => {
+      if (wrap.classList.contains("is-bursting")) return;
+      const rect = wrap.getBoundingClientRect();
+      wrap.classList.add("is-bursting");
+      for (let index = 0; index < 8; index++) {
+        const petal = document.createElement("span");
+        petal.className = "bw-petal";
+        petal.style.left = `${rect.left + rect.width / 2}px`;
+        petal.style.top = `${rect.top + rect.height / 2}px`;
+        petal.style.setProperty("--petal-angle", `${index * 45}deg`);
+        petal.style.setProperty("--petal-distance", `${rnd(28, 42)}px`);
+        petal.style.setProperty("--petal-color", index % 2 ? "#d88778" : "#e5bd70");
+        petal.style.animationDelay = `${index * 20}ms`;
+        layer.append(petal);
+        setTimeout(() => petal.remove(), 950);
+      }
+      const flowerCenter = document.createElement("span");
+      flowerCenter.className = "bw-flower-center";
+      flowerCenter.style.left = `${rect.left + rect.width / 2}px`;
+      flowerCenter.style.top = `${rect.top + rect.height / 2}px`;
+      layer.append(flowerCenter);
+      setTimeout(() => flowerCenter.remove(), 850);
+      setTimeout(() => {
+        b.x = rnd(0, innerWidth);
+        b.y = rnd(0, innerHeight);
+        pick(b);
+        wrap.classList.remove("is-bursting");
+        wrap.style.opacity = rnd(.8, 1);
+      }, 900);
+    });
     setTimeout(() => wrap.style.opacity = rnd(.8, 1), 100);
     const b = { wrap, img, x: rnd(0, innerWidth), y: -60, h: Math.PI / 2, spd: rnd(...SPEED), t: rnd(0, 10), ph: rnd(0, 6), amp: .55, glide: false, gt: rnd(1, 3) };
     pick(b); return b;
@@ -119,6 +149,7 @@ function initButterflies() {
   (function loop(now) {
     const dt = Math.min(.05, (now - last) / 1000); last = now;
     bs.forEach(b => {
+      if (b.wrap.classList.contains("is-bursting")) return;
       b.t += dt;
       const dx = b.tx - b.x, dy = b.ty - b.y;
       if (Math.hypot(dx, dy) < 90) pick(b);
