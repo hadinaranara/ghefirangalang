@@ -138,6 +138,7 @@ main{position:relative;z-index:2}
 .wish{padding:1.2rem;background:rgba(246,239,224,.75);border-left:3px solid var(--gold)}
 .wish small{opacity:.6}.wish b{font-family:var(--ff-serif);font-size:1.2rem}
 .foot{text-align:center;padding:3rem 1rem 6rem;font-family:var(--ff-serif)}
+.studio-credit{display:block;margin-top:.75rem;font-family:var(--ff-sans);font-size:.65rem;letter-spacing:.16em;opacity:.7}
 
 /* MUSIC */
 .music{position:fixed;z-index:70;right:14px;bottom:76px;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:var(--brown);color:var(--ivory);font-size:1.3rem;cursor:pointer}
@@ -264,7 +265,8 @@ main{position:relative;z-index:2}
 /* ===== KUPU-KUPU DI HALAMAN UTAMA (terbang dan bisa ditekan) ===== */
 .bfm{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
 .bfm .bw{position:absolute;left:0;top:0;opacity:0;transition:opacity 1.5s;will-change:transform}
-.bfm .bw{pointer-events:auto;cursor:pointer;touch-action:manipulation}
+.bfm .bw{pointer-events:auto;cursor:pointer;touch-action:none}
+.bfm .bw::before{content:"";position:absolute;inset:-14px}
 .bfm .bw.is-bursting{opacity:0!important;transition:opacity .08s}
 .bfm img{display:block;width:100%;transform-origin:55% 65%;pointer-events:none}
 .bfm .bw-petal{position:absolute;width:10px;height:18px;margin:-9px 0 0 -5px;border-radius:100% 0 100% 0;background:var(--petal-color);box-shadow:0 0 8px rgba(229,189,112,.4);

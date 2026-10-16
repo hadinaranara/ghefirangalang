@@ -111,8 +111,9 @@ function initButterflies() {
   const bs = Array.from({ length: COUNT }, () => {
     const wrap = document.createElement("div"), img = document.createElement("img");
     wrap.className = "bw"; wrap.style.width = rnd(26, 48) + "px"; img.src = src; img.alt = ""; wrap.append(img); layer.append(wrap);
-    wrap.addEventListener("click", () => {
+    wrap.addEventListener("pointerdown", event => {
       if (wrap.classList.contains("is-bursting")) return;
+      if (event.pointerType === "touch") event.preventDefault();
       const rect = wrap.getBoundingClientRect();
       wrap.classList.add("is-bursting");
       for (let index = 0; index < 8; index++) {
