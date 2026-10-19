@@ -2,7 +2,7 @@
 const CONFIG = {
   weddingDate: "2026-11-21T08:00:00+07:00", // waktu akad (WIB)
   eventTitle: "Pernikahan Ghefira & Galang",
-  location: "Perumahan Indogren, Jalan Kenanga Raya, Block GA No. 06"
+  location: "Kavling Asyfa, Komplek Perumahan Indogreen, Kp. Nyangkot RT. 5 RW. 5, Desa Gunungsari, Kec. Citeureup, Kab. Bogor - Jabar"
 };
 
 const $ = (s, r = document) => r.querySelector(s);
